@@ -33,12 +33,14 @@ router.delete('/', (req, res) => {
 
     let collection = db.get('favourites');
 
+    console.log(`Favourite deleted: ${name}`);
+
     collection.remove({name}, (err, doc) => {
         if (err) {
             res.status(500).send("There was a problem adding the information to the database.");
         }
         else {
-            res.redirect("/favourites/");
+            res.send("Deleted");
         }
     });
 

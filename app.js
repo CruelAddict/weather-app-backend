@@ -24,6 +24,7 @@ app.use((req,res,next) => {
 });
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
     next();
 });
